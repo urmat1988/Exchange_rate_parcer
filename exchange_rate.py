@@ -19,12 +19,17 @@ with open ('collected_data.txt') as csv_file:
 	data=list(csv_reader)
 	
 # Save the proccessed data to csv file
-with open('exchange_rates_25072022.csv','w',newline='') as f:
+with open('exchange_rates_current_date.csv','w',newline='') as f:
 	csv_writer = csv.writer(f)
 	
-	csv_writer.writerow(['Наличные курсы','USD','EURO','RUB','KZT'])
-	csv_writer.writerow(['банк', 'Покупка', 'Продажа', 'Покупка', 'Продажа',
-		'Покупка', 'Продажа','Покупка', 'Продажа'])
+	csv_writer.writerow([data[140][133][181:195],data[145][0][33:36],
+		data[145][0][33:36],data[146][0][33:37],data[146][0][33:37],
+		data[147][0][33:36],data[147][0][33:36],data[148][0][33:36],
+		data[148][0][33:36]])
+	csv_writer.writerow([data[140][133][931:935],data[140][133][957:964], 
+		data[140][133][986:993],data[140][133][957:964],data[140][133][986:993],
+		data[140][133][957:964],data[140][133][986:993],data[140][133][957:964],
+		data[140][133][986:993]])
 	csv_writer.writerow([data[144][0][29:37],data[145][0][40:45],
 		data[145][1][0:5],data[146][0][41:45],data[146][1][0:5],
 		data[147][0][40:45],data[147][1][0:5],data[148][0][40:45],
